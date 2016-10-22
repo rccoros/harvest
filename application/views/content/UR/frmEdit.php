@@ -15,7 +15,7 @@
                 <a href="<?php echo base_url(); ?>?ap=dashboard">Home</a>
             </li>
             <li>
-                <a href="<?php echo base_url(); ?>?ap=userse">Users</a>
+                <a href="<?php echo base_url(); ?>?ap=users">Users</a>
             </li>
         </ul>
     </div>
@@ -62,11 +62,11 @@
                         <br />
                         <div class="form-group">
                             <label for="exampleInputEmail1">Username</label>
-                            <input type="text" class="form-control" name="username" id="username" placeholder="Enter Username" value="<?php echo $row -> username;?>" required>
+                            <input type="text" class="form-control" name="username" id="username" placeholder="Enter Username" value="<?php echo $user -> username;?>" required>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" name="password" id="password" placeholder="Enter Password" value="<?php echo $row -> password;?>" required>
+                            <input type="password" class="form-control" name="password" id="password" placeholder="Enter Password" value="<?php echo $user -> password;?>" required>
                         </div>
                         <div class="form-group">
                             <div class="control-group">
@@ -76,7 +76,7 @@
                                         <?php 
                                         $options = array("Administrator", "User");
                                         foreach ($options as $option => $value) {
-                                            if (strtolower($value) == strtolower($row -> account_type)) {
+                                            if (strtolower($value) == strtolower($user -> account_type)) {
                                                 echo '<option value='.$value.' selected="selected">'.$value.'</option>';
                                             } else {
                                                 echo '<option value='.$value.'>'.$value.'</option>';

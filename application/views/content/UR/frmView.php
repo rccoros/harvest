@@ -15,7 +15,7 @@
                 <a href="<?php echo base_url(); ?>?ap=dashboard">Home</a>
             </li>
             <li>
-                <a href="<?php echo base_url(); ?>?ap=userse">Users</a>
+                <a href="<?php echo base_url(); ?>?ap=users">Users</a>
             </li>
         </ul>
     </div>
