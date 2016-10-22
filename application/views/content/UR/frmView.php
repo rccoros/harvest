@@ -35,73 +35,18 @@
                         <span><?php echo $user -> first_name; ?></span>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Middle Name</label><br/>
-                        <span><?php echo $user -> middle_name; ?></span>
-                    </div>
-                    <div class="form-group">
                         <label for="exampleInputEmail1">Last Name</label><br/>
                         <span><?php echo $user -> last_name; ?></span>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Name Suffix</label><br/>
-                        <span><?php echo $user -> name_suffix; ?></span>
-                    </div>
-                    <div class="form-group">
-                        <div class="control-group">
-                            <label class="control-label" for="selectError2">Gender</label><br/>
-                            <span><?php echo $user -> gender; ?></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Height</label><br/>
-                        <span><?php echo $user -> height; ?></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Birthdate</label><br/>
-                        <span><?php echo $user -> birthdate; ?></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Address</label><br/>
-                        <span><?php echo $user -> address; ?></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Contacts</label><br/>
-                        <span><?php echo $user -> numbers; ?></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Emergency Contact Person</label><br/>
-                        <span><?php echo $user -> emer_cont_person; ?></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Emergency Contact No.</label><br/>
-                        <span><?php echo $user -> emer_cont_number; ?></span>
-                    </div>
-                    <br />
                     <br />
                     <div class="form-group">
                         <label for="exampleInputEmail1">Username</label><br/>
                         <span><?php echo $user -> username; ?></span>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label><br/>
-                        <span><?php echo $user -> password; ?></span>
-                    </div>
-                    <div class="form-group">
                         <div class="control-group">
                             <label class="control-label" for="selectError2">Account Type</label><br/>
-                            <span><?php echo $user -> account_type; ?></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="control-group">
-                            <label class="control-label" for="selectError2">TGIF HUB Member</label><br/>
-                            <span><?php echo $user -> gym_member; ?></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="control-group">
-                            <label class="control-label" for="selectError2">Herbalife Member</label><br/>
-                            <span><?php echo $user -> herbalife_member; ?></span>
+                            <span><?php echo $user -> type; ?></span>
                         </div>
                     </div>
                     <br />
