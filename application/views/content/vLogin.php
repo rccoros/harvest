@@ -2,7 +2,7 @@
 <div class="ch-container">
     <div class="row" style="margin-top: 15%">
         <div class="well col-md-3 center login-box" style="background-color: #ececec">
-            <div class="thumbnail" style="background-color: #fee236"><img src="<?php echo base_url(); ?>img/logo-notext_puti.png"></div>
+            <div class="thumbnail" style="background-color: #fee236"><img src="<?php echo base_url(); ?>img/logo-text3_puti.png"></div>
             <form class="form-horizontal" action="<?php echo base_url(); ?>cLogin/signin" method="post">
                 <fieldset>
                     <div class="input-group input-group-lg col-sm-12">

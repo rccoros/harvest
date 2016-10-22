@@ -176,9 +176,9 @@ class cLogin extends CI_Controller {
 
         $this -> load -> view('repeating/header', $data);
         $this -> load -> view('repeating/top-bar', $data);
-        $this -> load -> view('repeating/left-menu', $data);
-        $this -> load -> view('content/vDashboard');
-        $this -> load -> view('repeating/footer', $data);
+        //$this -> load -> view('repeating/left-menu', $data);
+        //$this -> load -> view('content/vDashboard');
+        //$this -> load -> view('repeating/footer', $data);
     }
 
     public function pos() {

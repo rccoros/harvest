@@ -1,53 +1,32 @@
 <body>
     <!-- topbar starts -->
     <div class="navbar navbar-default" role="navigation">
-
-        <div class="navbar-inner">
-            <button type="button" class="navbar-toggle pull-left animated flip">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="<?php echo base_url(); ?>"> <img alt="TGIF HUB Logo" src="<?php echo base_url(); ?>img/logo202.png" class="hidden-xs"/>
-                <span>TGIF HUB</span></a>
-
-            <!-- user dropdown starts -->
-            <div class="btn-group pull-right">
-                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> admin</span>
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Profile</a></li>
-                    <li class="divider"></li>
-                    <li><a href="<?php echo base_url(); ?>cLogin/signout">Logout</a></li>
-                </ul>
-            </div>
-            <!-- user dropdown ends -->
-
-            <!-- theme selector starts -->
-            <div class="btn-group pull-right theme-container animated tada">
-                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    <i class="glyphicon glyphicon-tint"></i><span
-                        class="hidden-sm hidden-xs"> Change Theme / Skin</span>
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" id="themes">
-                    <li><a data-value="classic" href="#"><i class="whitespace"></i> Classic</a></li>
-                    <li><a data-value="cerulean" href="#"><i class="whitespace"></i> Cerulean</a></li>
-                    <li><a data-value="cyborg" href="#"><i class="whitespace"></i> Cyborg</a></li>
-                    <li><a data-value="simplex" href="#"><i class="whitespace"></i> Simplex</a></li>
-                    <li><a data-value="darkly" href="#"><i class="whitespace"></i> Darkly</a></li>
-                    <li><a data-value="lumen" href="#"><i class="whitespace"></i> Lumen</a></li>
-                    <li><a data-value="slate" href="#"><i class="whitespace"></i> Slate</a></li>
-                    <li><a data-value="spacelab" href="#"><i class="whitespace"></i> Spacelab</a></li>
-                    <li><a data-value="united" href="#"><i class="whitespace"></i> United</a></li>
-                </ul>
-            </div>
-            <!-- theme selector ends -->
-
-
+        <div class="banner" style="background-color: #fee236" style="border: none">
+            <a href="http://localhost:8080/CI_HoH/">
+				<img src="<?php echo base_url(); ?>img/banner-puti.png" alt="Rapid HTML"/>
+			</a>
         </div>
     </div>
+    
+    <div class="container center" style="background: #ececec; margin-top: 2%">
+		<font size="20">HOPE PLANNER</font>
+		<h2 style="color: #555555">Optimize your classrom prep time.</h2><br>
+		<p class="lead">Accessible anywhere, plan your lessons, manage your schedule<br>
+			 with ease and look at how your students are doing.</p>
+   	</div>
+   	
+    <div class="container center" style="background: #fee236; margin-top: 2%">
+		<font size="20"><a href="http://localhost:8080/CI_HoH">STATISTICS</a></font>
+		<h2 style="color: #555555">Get an overview of your students' performance.</h2><br>
+		<p class="lead">Measure excellence and analyze skills to improve.</p>
+   	</div>
+   	
+   	<div class="container center" style="background: #ececec; margin-top: 2%">
+		<font size="20"><a href="<?php echo base_url(); ?>calendar.html">LESSON PLAN</a></font>
+		<h2 style="color: #555555">Put online lesson planning in your hands.</h2><br>
+		<p class="lead">Access, edit and move lessons from anywhere. Create lessons in the intuitive online editor easily.<br>
+			Add in attachments, photos and videos to bring your lessons to life.</p>
+   	</div>
+  </div>
+</div>
     <!-- topbar ends -->
