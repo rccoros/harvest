@@ -38,9 +38,7 @@
     <tr>
         <th>Name</th>
         <th>Username</th>
-        <th>Date registered</th>
         <th>Role</th>
-        <th>Status</th>
         <th>Actions</th>
     </tr>
     </thead>
@@ -48,13 +46,9 @@
 
     <?php foreach ($list as $item){ ?>
     <tr>
-        <td><?php echo $item -> first_name.' '.$item -> middle_name.' '.$item -> last_name.' '.$item -> name_suffix; ?></td>
+        <td><?php echo $item -> first_name.' '.$item -> last_name; ?></td>
         <td><?php echo $item -> username; ?></td>
-        <td class="center">2012/01/01</td>
-        <td class="center"><?php echo $item -> account_type; ?></td>
-        <td class="center">
-            <span class="label-success label label-default">Active</span>
-        </td>
+        <td class="center"><?php echo $item -> type; ?></td>
         <td class="center">
             <a class="btn btn-success" href="<?php echo base_url(); ?>?ap=usersv&id=<?php echo $item -> id;?>">
                 <i class="glyphicon glyphicon-zoom-in icon-white"></i>
@@ -99,9 +93,7 @@
                                 <tr>
                                     <th>Name</th>
                                     <th>Username</th>
-                                    <th>Date registered</th>
                                     <th>Role</th>
-                                    <th>Status</th>
                                     <th>Actions</th>
                                 </tr>
                                 </thead>
@@ -109,13 +101,9 @@
 
                                 <?php foreach ($list as $item){ ?>
                                     <tr>
-                                        <td><?php echo $item -> first_name.' '.$item -> middle_name.' '.$item -> last_name.' '.$item -> name_suffix; ?></td>
+                                        <td><?php echo $item -> first_name.' '.$item -> last_name; ?></td>
                                         <td><?php echo $item -> username; ?></td>
-                                        <td class="center">2012/01/01</td>
-                                        <td class="center"><?php echo $item -> account_type; ?></td>
-                                        <td class="center">
-                                            <span class="label-success label label-default">Active</span>
-                                        </td>
+                                        <td class="center"><?php echo $item -> type; ?></td>
                                         <td class="center">
                                             <a class="btn btn-success" href="#">
                                                 <i class="glyphicon glyphicon-zoom-in icon-white"></i>

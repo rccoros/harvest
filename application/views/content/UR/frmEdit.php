@@ -30,22 +30,14 @@
                     </div>
                 </div>
                 <div class="box-content">
-                    <form role="form" action="<?php echo base_url();?>cUsers/update/?id=<?php echo $row -> id;?>" method="post">
+                    <form role="form" action="<?php echo base_url();?>cUsers/update/?id=<?php echo $user -> id;?>" method="post">
                         <div class="form-group">
                             <label for="exampleInputEmail1">First Name</label>
-                            <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Enter First Name" value="<?php echo $row -> first_name;?>" required autofocus>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Middle Name</label>
-                            <input type="text" class="form-control" name="middle_name" id="middle_name" placeholder="Enter Middle Name" value="<?php echo $row -> middle_name;?>"  required>
+                            <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Enter First Name" value="<?php echo $user -> first_name;?>" required autofocus>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Last Name</label>
-                            <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Enter Last Name" value="<?php echo $row -> last_name;?>"  required>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Name Suffix</label>
-                            <input type="text" class="form-control" name="name_suffix" id="name_suffix" placeholder="Enter Your Suffix Name if have" value="<?php echo $row -> name_suffix;?>"  required>
+                            <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Enter Last Name" value="<?php echo $user -> last_name;?>"  required>
                         </div>
                         <div class="form-group">
                             <div class="control-group">
@@ -55,7 +47,7 @@
                                         <?php 
                                         $options = array("Male", "Female");
                                         foreach ($options as $option => $value) {
-                                            if (strtolower($value) == strtolower($row -> gender)) {
+                                            if (strtolower($value) == strtolower($user -> gender)) {
                                                 echo '<option value='.$value.' selected="selected">'.$value.'</option>';
                                             } else {
                                                 echo '<option value='.$value.'>'.$value.'</option>';
@@ -65,30 +57,6 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Height</label>
-                            <input type="text" class="form-control" name="height" id="height" placeholder="Enter Your Height" value="<?php echo $row -> height;?>"  required>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Birthdate</label>
-                            <input type="text" data-date-format="MM/DD/YYYY" class="form-control" name="birthdate" id="birthdate" placeholder="Enter Your Birthdate (dd-mm-yy)" value="<?php echo $row -> birthdate;?>"  required>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Address</label>
-                            <input type="text" class="form-control" name="address" id="address" placeholder="Enter Your Home Address" value="<?php echo $row -> address;?>"  required>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Contacts</label>
-                            <input type="text" class="form-control" name="numbers" id="numbers" placeholder="Enter Your Contacts" value="<?php echo $row -> numbers;?>"  required>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Emergency Contact Person</label>
-                            <input type="text" class="form-control" name="emer_cont_person" id="emer_cont_person" placeholder="Enter Your Emergency Contact Person" value="<?php echo $row -> emer_cont_person;?>"  required>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Emergency Contact No.</label>
-                            <input type="text" class="form-control" name="emer_cont_number" id="emer_cont_number" placeholder="Enter Your Emergency Contact No." value="<?php echo $row -> emer_cont_number;?>" required>
                         </div>
                         <br />
                         <br />
@@ -109,44 +77,6 @@
                                         $options = array("Administrator", "User");
                                         foreach ($options as $option => $value) {
                                             if (strtolower($value) == strtolower($row -> account_type)) {
-                                                echo '<option value='.$value.' selected="selected">'.$value.'</option>';
-                                            } else {
-                                                echo '<option value='.$value.'>'.$value.'</option>';
-                                            }
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="control-group">
-                                <label class="control-label" for="selectError2">TGIF HUB Member</label>
-                                <div class="controls">
-                                    <select data-placeholder="TGIF HUB Member" name="gym_member" id="gym_member" data-rel="chosen" required>
-                                        <?php 
-                                        $options = array("Yes", "No");
-                                        foreach ($options as $option => $value) {
-                                            if (strtolower($value) == strtolower($row -> gym_member)) {
-                                                echo '<option value='.$value.' selected="selected">'.$value.'</option>';
-                                            } else {
-                                                echo '<option value='.$value.'>'.$value.'</option>';
-                                            }
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="control-group">
-                                <label class="control-label" for="selectError2">Herbalife Member</label>
-                                <div class="controls">
-                                    <select data-placeholder="Herbalife member" name="herbalife_member" id="herbalife_member" data-rel="chosen" required>
-                                        <?php 
-                                        $options = array("Yes", "No");
-                                        foreach ($options as $option => $value) {
-                                            if (strtolower($value) == strtolower($row -> herbalife_member)) {
                                                 echo '<option value='.$value.' selected="selected">'.$value.'</option>';
                                             } else {
                                                 echo '<option value='.$value.'>'.$value.'</option>';
