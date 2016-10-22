@@ -4,7 +4,7 @@
         
     <div class="row">
         <div class="col-md-12 center login-header">
-            <h2>Welcome to TGIF HUB Portal</h2>
+            <h2>Welcome to Hope Planner</h2>
         </div>
         <!--/span-->
     </div><!--/row-->

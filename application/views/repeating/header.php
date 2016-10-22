@@ -16,7 +16,7 @@
         ===
     -->
     <meta charset="utf-8">
-    <title>TGIF HUB Portal</title>
+    <title>Hope Planner</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- The styles -->
@@ -62,6 +62,6 @@
     <![endif]-->
 
     <!-- The fav icon -->
-    <link rel="shortcut icon" href="<?php echo base_url(); ?>img/favicon2.ico">
+    <link rel="shortcut icon" href="<?php echo base_url(); ?>img/logo-notext_yellow.ico">
 
 </head>
