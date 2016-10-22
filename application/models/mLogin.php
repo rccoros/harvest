@@ -11,7 +11,7 @@ class mLogin extends CI_Model{
         $username = $this->input->post('username');
         $password = $this->input->post('password');
 
-        $sql = "SELECT * from tbl_users WHERE username='{$username}' AND password='{$password}' LIMIT 1 ";
+        $sql = "SELECT * from users WHERE username='{$username}' AND password='".MD5($password)."' LIMIT 1 ";
         $result = $this->db->query($sql);
         //$row = $result->row();
         if($result->num_rows() == 1){
