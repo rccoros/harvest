@@ -129,17 +129,16 @@ class cLogin extends CI_Controller {
         } else {
             $this -> load -> model('mLogin');
             $result = $this -> mLogin -> signinUser();
-            //$user_id = $this -> mLogin -> getCurrentUserId();
-            //$user_type = $this -> mLogin -> getCurrentUserType($user_id);
-            
+            $user_id = $this -> mLogin -> getCurrentUserId();
+            $user_type = $this -> mLogin -> getCurrentUserType($user_id);
             switch ($result) {
                 case 'access_granted' :
                     //$data = array('username' => $this -> input -> post('username'), 'is_logged_in' => true);
 
                     $this -> session -> set_userdata('access_granted','yes');
                     $this -> session -> set_userdata('active_page','dashboard');
-                    //$this -> session -> set_userdata('user_id',$user_id);
-                    //$this -> session -> set_userdata('user_type',$user_type);
+                    $this -> session -> set_userdata('user_id',$user_id);
+                    $this -> session -> set_userdata('user_type',$user_type);
 
                     $this->session->set_flashdata('message', 'Access granted');
                     redirect('', 'refresh');
@@ -222,7 +221,7 @@ class cLogin extends CI_Controller {
 
         $this -> load -> view('repeating/header', $data);
         $this -> load -> view('repeating/top-bar');
-        $this -> load -> view('repeating/left-menu');
+        //$this -> load -> view('repeating/left-menu');
         $this -> load -> view('content/UR/lstUsers', $records);
         $this -> load -> view('repeating/footer', $data);
     }
@@ -238,7 +237,7 @@ class cLogin extends CI_Controller {
 
         $this -> load -> view('repeating/header', $data);
         $this -> load -> view('repeating/top-bar');
-        $this -> load -> view('repeating/left-menu');
+        //$this -> load -> view('repeating/left-menu');
         $this -> load -> view('content/UR/frmView', $data);
         $this -> load -> view('repeating/footer', $data);
     }
@@ -252,7 +251,7 @@ class cLogin extends CI_Controller {
 
         $this -> load -> view('repeating/header', $data);
         $this -> load -> view('repeating/top-bar');
-        $this -> load -> view('repeating/left-menu');
+        //$this -> load -> view('repeating/left-menu');
         $this -> load -> view('content/UR/frmAdd', $records);
         $this -> load -> view('repeating/footer', $data);
     }
@@ -265,7 +264,7 @@ class cLogin extends CI_Controller {
         $data['user'] = $this -> mUsers -> getRow($id);
 
         $this -> load -> view('repeating/header', $data);
-        $this -> load -> view('repeating/left-menu');
+        //$this -> load -> view('repeating/left-menu');
         $this -> load -> view('content/UR/frmEdit', $data);
         $this -> load -> view('repeating/footer', $data);
     }

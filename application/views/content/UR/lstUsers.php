@@ -74,67 +74,13 @@
 
     </div><!--/row-->
 
-            <div class="row">
-                <div class="box col-md-12">
-                    <div class="box-inner">
-                        <div class="box-header well" data-original-title="">
-                            <h2><i class="glyphicon glyphicon-user"></i> Members</h2>
-
-                            <div class="box-icon">
-                                <a href="<?php echo base_url(); ?>?ap=usersa" class="btn btn-round btn-default"><i
-                                        class="glyphicon glyphicon-plus"></i></a>
-                                <a href="#" class="btn btn-minimize btn-round btn-default"><i
-                                        class="glyphicon glyphicon-chevron-up"></i></a>
-                            </div>
-                        </div>
-                        <div class="box-content">
-                            <table class="table table-striped table-bordered bootstrap-datatable datatable responsive">
-                                <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Username</th>
-                                    <th>Role</th>
-                                    <th>Actions</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-
-                                <?php foreach ($list as $item){ ?>
-                                    <tr>
-                                        <td><?php echo $item -> first_name.' '.$item -> last_name; ?></td>
-                                        <td><?php echo $item -> username; ?></td>
-                                        <td class="center"><?php echo $item -> type; ?></td>
-                                        <td class="center">
-                                            <a class="btn btn-success" href="#">
-                                                <i class="glyphicon glyphicon-zoom-in icon-white"></i>
-                                                View
-                                            </a>
-                                            <a class="btn btn-info" href="<?php echo base_url(); ?>?ap=userse&id=<?php echo $item -> id;?>">
-                                                <i class="glyphicon glyphicon-edit icon-white"></i>
-                                                Edit
-                                            </a>
-                                            <a class="btn btn-danger" href="<?php echo base_url();?>cUsers/delete/?id=<?php echo $item -> id;?>">
-                                                <i class="glyphicon glyphicon-trash icon-white"></i>
-                                                Delete
-                                            </a>
-                                        </td>
-                                    </tr>
-                                <?php } ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <!--/span-->
-
-            </div><!--/row-->
+            
 
     <!-- content ends -->
     </div><!--/#content.col-md-0-->
 </div><!--/fluid-row-->
 
     <hr>
-
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
          aria-hidden="true">
 
