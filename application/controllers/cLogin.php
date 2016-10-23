@@ -20,6 +20,9 @@ class cLogin extends CI_Controller {
 				case 'calendar':
                     $this -> session -> set_userdata('active_page','calendar');
                     break;
+				case 'signout':
+                    $this -> session -> set_userdata('active_page','signout');
+                    break;
                 case 'pos':
                     $this -> session -> set_userdata('active_page','pos');
                     break;
@@ -61,6 +64,9 @@ class cLogin extends CI_Controller {
                     break;
 				case 'calendar':
                     $this->calendar();
+                    break;
+				case 'signout':
+                    $this->signout();
                     break;
                 case 'pos':
                     $this->pos();
