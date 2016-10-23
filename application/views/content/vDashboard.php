@@ -7,7 +7,7 @@
    	</div>
    	
     <div class="container center col-sm-12" style="background: #fee236">
-		<br><font size="20"><a href="http://localhost:8080/CI_HoH">STATISTICS</a></font>
+		<br><font size="20"><a href="<?php echo base_url(); ?>?ap=statistics">STATISTICS</a></font>
 		<h2 style="color: #555555">Get an overview of your students' performance.</h2><br>
 		<p class="lead">Measure excellence and analyze skills to improve.</p><br>
    	</div>

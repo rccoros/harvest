@@ -44,7 +44,7 @@ class cRecords  extends CI_Controller{
 
     public function delete() {
         $id = $this -> input ->post('id');
-        $this -> load -> model('mUsers');
+        $this -> load -> model('mExams');
         $this -> mUsers -> delete($id);
 		$this -> session -> set_userdata('active_page','classrecord');
 		$this->session->set_flashdata('message', 'User successfully deleted.');

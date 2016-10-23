@@ -11,7 +11,7 @@ class mExams extends CI_Model{
     public function getSubject($id) {
         
         $this->db->where("id",$id);
-        $query=$this->db->get("users");
+        $query=$this->db->get("exams");
 
         $row = $query->row();
 
@@ -24,7 +24,7 @@ class mExams extends CI_Model{
     }
 
     public function getRow($id) {
-        $query = $this -> db ->query("SELECT * FROM users WHERE id='{$id}'");
+        $query = $this -> db ->query("SELECT * FROM exams WHERE id='{$id}'");
         return $query->row();
     }
 
@@ -36,7 +36,7 @@ class mExams extends CI_Model{
 
     public function update($id, $data) {
         $this -> db -> where('id', $id);
-        $this -> db -> update('users', $data);
+        $this -> db -> update('exams', $data);
         $this -> session -> set_flashdata('message', 'Your data updated Successfully..');
 
         return true;
@@ -44,7 +44,7 @@ class mExams extends CI_Model{
 
     public function delete($id){
         $this -> db -> where('id', $id);
-        $this -> db -> delete('users');
+        $this -> db -> delete('exams');
         $this -> session -> set_flashdata('message', 'Your data deleted Successfully..');
 
         return true;
