@@ -41,17 +41,17 @@ class cLogin extends CI_Controller {
                 case 'inventory':
                     $this -> session -> set_userdata('active_page','inventory');
                     break;
-                case 'schedules':
-                    $this -> session -> set_userdata('active_page','schedules');
+                case 'classrecord':
+                    $this -> session -> set_userdata('active_page','classrecord');
                     break;
-                case 'scheduler':
-                    $this -> session -> set_userdata('active_page','scheduler');
+                case 'classrecorda':
+                    $this -> session -> set_userdata('active_page','classrecorda');
                     break;
-                case 'polle':
-                    $this -> session -> set_userdata('active_page','pollevents');
+                case 'classrecorde':
+                    $this -> session -> set_userdata('active_page','classrecorde');
                     break;
-                case 'pollr':
-                    $this -> session -> set_userdata('active_page','pollreports');
+                case 'classrecordv':
+                    $this -> session -> set_userdata('active_page','classrecordv');
                     break;
             }
 
@@ -83,17 +83,17 @@ class cLogin extends CI_Controller {
                 case 'inventory':
                     $this->inventory();
                     break;
-                case 'schedules':
-                    $this->schedules();
+                case 'classrecord':
+                    $this->classrecord();
                     break;
-                case 'scheduler':
-                    $this->scheduler();
+                case 'classrecorda':
+                    $this->classrecorda();
                     break;
-                case 'pollevents':
-                    $this->pollevent();
+                case 'classrecorde':
+                    $this->classrecorde();
                     break;
-                case 'pollreports':
-                    $this->pollreport();
+                case 'classrecordv':
+                    $this->classrecordv();
                     break;
 
             }
@@ -270,81 +270,65 @@ class cLogin extends CI_Controller {
     }
     // End Users
 
-    public function measurements() {
-        $data['ActivePage'] = "measurements";
+    //Class Record LIST, ADD & EDIT
+    public function classrecord() {
+        $data['ActivePage'] = "classrecord";
 
-        $this -> load -> model('mMeasurements');
-        $records['list'] = $this -> mMeasurements -> getList();
+        $this -> load -> model('mClassRecords');
+        $records['list'] = $this -> mClassRecords -> getList();
 
         $this -> load -> view('repeating/header', $data);
         $this -> load -> view('repeating/top-bar');
-        $this -> load -> view('repeating/left-menu');
-        $this -> load -> view('content/UR/lstMeasurements', $records);
+        $this -> load -> view('content/CR/lstRecords', $records);
         $this -> load -> view('repeating/footer', $data);
     }
 
-    public function inventory() {
-        $data['ActivePage'] = "inventory";
+    public function classrecorda() {
 
-        $this -> load -> model('mInventory');
-        $records['list'] = $this -> mInventory -> getList();
+        $data['ActivePage'] = "classrecorda";
+
+        $this -> load -> model('mClassRecords');
+        $records['list'] = $this -> mClassRecords -> getList();
 
         $this -> load -> view('repeating/header', $data);
         $this -> load -> view('repeating/top-bar');
-        $this -> load -> view('repeating/left-menu');
-        $this -> load -> view('content/SaI/lstInventory', $records);
+        //$this -> load -> view('repeating/left-menu');
+        $this -> load -> view('content/CR/frmAdd', $records);
         $this -> load -> view('repeating/footer', $data);
     }
 
-    public function schedules() {
-        $data['ActivePage'] = "schedules";
+    public function classrecorde() {
 
-        $this -> load -> model('mSchedule');
-        $records['list'] = $this -> mSchedule -> getList();
+        $data['ActivePage'] = "classrecorde";
+
+        $this -> load -> model('mClassRecords');
+        $records['list'] = $this -> mClassRecords -> getList();
 
         $this -> load -> view('repeating/header', $data);
         $this -> load -> view('repeating/top-bar');
-        $this -> load -> view('repeating/left-menu');
-        $this -> load -> view('content/SL/lstSchedules', $records);
+        //$this -> load -> view('repeating/left-menu');
+        $this -> load -> view('content/CR/frmEdit', $records);
         $this -> load -> view('repeating/footer', $data);
     }
 
-    public function scheduler() {
-        $data['ActivePage'] = "schedules";
+    public function classrecordv() {
 
-        $this -> load -> model('mSchedule');
-        $records['list'] = $this -> mSchedule -> getList();
+        $data['ActivePage'] = "classrecordv";
 
-        $this -> load -> view('repeating/header', $data);
-        $this -> load -> view('repeating/top-bar');
-        $this -> load -> view('repeating/left-menu');
-        $this -> load -> view('content/SL/calendar', $records);
-        $this -> load -> view('repeating/footer', $data);
-    }
-
-    public function pollevent() {
-        $data['ActivePage'] = "pollevent";
-
-        $this -> load -> model('mEvents');
-        $records['list'] = $this -> mEvents -> getList();
+        $this -> load -> model('mUsers');
+        $data['students'] = $this -> mUsers -> getStudents();
+        $this -> load -> model('mClassRecords');
+        $id =  $this->input->get('id');
+        $data['subject'] = $this -> mClassRecords -> getRow($id);
+        $this -> load -> model('mExams');
+        $data['exams'] = $this -> mExams -> getList($id);
+        $this -> load -> model('mGrades');
+        $data['grades'] = $this -> mGrades -> getList(1,$id);
 
         $this -> load -> view('repeating/header', $data);
         $this -> load -> view('repeating/top-bar');
-        $this -> load -> view('repeating/left-menu');
-        $this -> load -> view('content/EL/lstEvents', $records);
-        $this -> load -> view('repeating/footer', $data);
-    }
-
-    public function pollreport() {
-        $data['ActivePage'] = "pollreport";
-
-        $this -> load -> model('mEvents');
-        $records['list'] = $this -> mEvents -> getList();
-
-        $this -> load -> view('repeating/header', $data);
-        $this -> load -> view('repeating/top-bar');
-        $this -> load -> view('repeating/left-menu');
-        $this -> load -> view('content/EL/calendar', $records);
+        //$this -> load -> view('repeating/left-menu');
+        $this -> load -> view('content/CR/frmView', $data);
         $this -> load -> view('repeating/footer', $data);
     }
 
