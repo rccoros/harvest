@@ -17,6 +17,9 @@ class cLogin extends CI_Controller {
                 case 'dashboard':
                     $this -> session -> set_userdata('active_page','dashboard');
                     break;
+				case 'calendar':
+                    $this -> session -> set_userdata('active_page','calendar');
+                    break;
                 case 'pos':
                     $this -> session -> set_userdata('active_page','pos');
                     break;
@@ -55,6 +58,9 @@ class cLogin extends CI_Controller {
             switch( $this -> session -> userdata('active_page')){
                 case 'dashboard':
                     $this->dashboard();
+                    break;
+				case 'calendar':
+                    $this->calendar();
                     break;
                 case 'pos':
                     $this->pos();
@@ -181,8 +187,18 @@ class cLogin extends CI_Controller {
         $this -> load -> view('repeating/header', $data);
         $this -> load -> view('repeating/top-bar', $data);
         //$this -> load -> view('repeating/left-menu', $data);
-        //$this -> load -> view('content/vDashboard');
-        //$this -> load -> view('repeating/footer', $data);
+        $this -> load -> view('content/vDashboard');
+        $this -> load -> view('repeating/footer', $data);
+    }
+	
+	public function calendar(){
+        $data['ActivePage'] = "calendar";
+
+        $this -> load -> view('repeating/header', $data);
+        $this -> load -> view('repeating/top-bar', $data);
+        $this -> load -> view('repeating/left-menu', $data);
+        $this -> load -> view('calendar.html');
+        $this -> load -> view('repeating/footer', $data);
     }
 
     public function pos() {
