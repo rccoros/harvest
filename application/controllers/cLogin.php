@@ -321,14 +321,28 @@ class cLogin extends CI_Controller {
 
         $this -> load -> model('mUsers');
         $data['students'] = $this -> mUsers -> getStudents();
-        $this -> load -> model('mClassRecords');
-        $id =  $this->input->get('id');
-        $data['subject'] = $this -> mClassRecords -> getRow($id);
         $this -> load -> model('mExams');
-        $data['exams'] = $this -> mExams -> getList($id);
-        $this -> load -> model('mGrades');
-        $data['grades'] = $this -> mGrades -> getList(1,$id);
 
+        $id =  $this->input->get('id');
+        $data['exams'] = $this -> mExams -> getList($id);
+        $student_ids = "";
+        foreach($data['students'] as $student){
+            $student_ids[] .= $student->id;
+        }
+        $student_ids = implode(',',$student_ids);
+
+        $exam_ids = "";
+        foreach($data['exams'] as $exam){
+            $exam_ids[] .= $exam->id;
+        }
+        $exam_ids = implode(',',$exam_ids);
+
+
+
+        $this -> load -> model('mClassRecords');
+        $data['subject'] = $this -> mClassRecords -> getRow($id);
+        $this -> load -> model('mGrades');
+        $data['grades'] = $this -> mGrades -> getList($student_ids,$exam_ids);
         $this -> load -> view('repeating/header', $data);
         $this -> load -> view('repeating/top-bar');
         //$this -> load -> view('repeating/left-menu');

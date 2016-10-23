@@ -24,7 +24,7 @@ class mUsers extends CI_Model{
     }
 
     public function getStudents() {
-        $query = $this -> db ->query('SELECT * FROM users WHERE type="Student"');
+        $query = $this -> db ->query('SELECT id FROM users WHERE type="Student"');
         return $query->result();
     }
 

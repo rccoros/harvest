@@ -45,12 +45,15 @@
     </thead>
     <tbody>
 
-    <?php foreach ($students as $student){ ?>
+    <?php foreach ($grades as $grade){ 
+        ?>
     <tr>
-        <td><?php echo $student -> first_name.' '.$student -> last_name; ?></td>
-        <td><?php echo $student -> first_name.' '.$student -> last_name; ?></td>
+        <td><?php echo $grade -> first_name.' '.$grade -> last_name; ?></td>
+        <td><?php echo $grade -> grade; ?></td>
+        <td><?php echo $grade -> grade; ?></td>
     </tr>
     <?php } ?>
+
     </tbody>
     </table>
     </div>

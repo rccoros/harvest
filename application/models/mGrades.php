@@ -18,8 +18,11 @@ class mGrades extends CI_Model{
         return $row;
     }
 
-    public function getList($user_id,$exam_id) {
-        $query = $this -> db ->query("SELECT * FROM Grades where user_id='{$user_id}' AND exam_id='{$exam_id}'");
+    public function getList($users,$exam_id) {
+        //die($users.' '.$exam_id);
+        $sql = "SELECT * FROM Grades g, Users u where g.user_id IN ({$users}) AND g.exam_id IN ({$exam_id}) AND u.id = g.user_id";
+        $query = $this -> db ->query($sql);
+        //die($sql);
         return $query->result();
     }
 

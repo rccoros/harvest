@@ -32,7 +32,7 @@
             <div class="box-content">
                 <form role="form" action="<?php echo base_url();?>cRecords/insert/" method="post">
                     <div class="form-group">
-                        <label for="subject">Subject</label><span class="required">*</span>
+                        <label for="subject">Exam Title</label><span class="required">*</span>
                         <input type="text" class="form-control" name="subject" id="subject"  required autofocus>
                     </div>
 
