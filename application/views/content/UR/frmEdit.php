@@ -32,35 +32,6 @@
                 <div class="box-content">
                     <form role="form" action="<?php echo base_url();?>cUsers/update/?id=<?php echo $user -> id;?>" method="post">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">First Name</label>
-                            <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Enter First Name" value="<?php echo $user -> first_name;?>" required autofocus>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Last Name</label>
-                            <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Enter Last Name" value="<?php echo $user -> last_name;?>"  required>
-                        </div>
-                        <div class="form-group">
-                            <div class="control-group">
-                                <label class="control-label" for="selectError2">Gender</label>
-                                <div class="controls">
-                                    <select data-placeholder="Your Gender" name="gender" id="gender" data-rel="chosen" required>
-                                        <?php 
-                                        $options = array("Male", "Female");
-                                        foreach ($options as $option => $value) {
-                                            if (strtolower($value) == strtolower($user -> gender)) {
-                                                echo '<option value='.$value.' selected="selected">'.$value.'</option>';
-                                            } else {
-                                                echo '<option value='.$value.'>'.$value.'</option>';
-                                            }
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <br />
-                        <br />
-                        <div class="form-group">
                             <label for="exampleInputEmail1">Username</label>
                             <input type="text" class="form-control" name="username" id="username" placeholder="Enter Username" value="<?php echo $user -> username;?>" required>
                         </div>
@@ -69,23 +40,12 @@
                             <input type="password" class="form-control" name="password" id="password" placeholder="Enter Password" value="<?php echo $user -> password;?>" required>
                         </div>
                         <div class="form-group">
-                            <div class="control-group">
-                                <label class="control-label" for="selectError2">Account Type</label>
-                                <div class="controls">
-                                    <select data-placeholder="Your Gender" name="account_type" id="account_type" data-rel="chosen" required>
-                                        <?php 
-                                        $options = array("Administrator", "User");
-                                        foreach ($options as $option => $value) {
-                                            if (strtolower($value) == strtolower($user -> account_type)) {
-                                                echo '<option value='.$value.' selected="selected">'.$value.'</option>';
-                                            } else {
-                                                echo '<option value='.$value.'>'.$value.'</option>';
-                                            }
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
+                            <label for="exampleInputEmail1">First Name</label>
+                            <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Enter First Name" value="<?php echo $user -> first_name;?>" required autofocus>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Last Name</label>
+                            <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Enter Last Name" value="<?php echo $user -> last_name;?>"  required>
                         </div>
                         <br />
                         <button type="submit" class="btn btn-default">Submit</button>

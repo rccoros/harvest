@@ -17,28 +17,19 @@
             <li>
                 <a href="<?php echo base_url(); ?>?ap=users">Users</a>
             </li>
-        </ul>
+        </ul>   
     </div>
-
+    
     <div class="row">
         <div class="box col-md-12">
             <div class="box-inner">
                 <div class="box-header well" data-original-title="">
-                    <h2><i class="glyphicon glyphicon-edit"></i> View User</h2>
+                    <h2><a href="<?php echo base_url(); ?>?ap=userse"><i class="glyphicon glyphicon-edit"></i></a> View User</h2>
 
                     <div class="box-icon">
                     </div>
                 </div>
                 <div class="box-content">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">First Name</label><br/>
-                        <span><?php echo $user -> first_name; ?></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Last Name</label><br/>
-                        <span><?php echo $user -> last_name; ?></span>
-                    </div>
-                    <br />
                     <div class="form-group">
                         <label for="exampleInputEmail1">Username</label><br/>
                         <span><?php echo $user -> username; ?></span>
@@ -48,6 +39,14 @@
                             <label class="control-label" for="selectError2">Account Type</label><br/>
                             <span><?php echo $user -> type; ?></span>
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">First Name</label><br/>
+                        <span><?php echo $user -> first_name; ?></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Last Name</label><br/>
+                        <span><?php echo $user -> last_name; ?></span>
                     </div>
                     <br />
                 </div>

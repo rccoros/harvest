@@ -15,7 +15,7 @@
             <a href="<?php echo base_url(); ?>?ap=dashboard">Home</a>
         </li>
         <li>
-            <a href="<?php echo base_url(); ?>?ap=usersa">Users</a>
+            <a href="<?php echo base_url(); ?>?ap=users">Users</a>
         </li>
     </ul>
 </div>
@@ -32,24 +32,25 @@
             <div class="box-content">
                 <form role="form" action="<?php echo base_url();?>cUsers/insert/" method="post">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Username</label><span class="required">*</span>
+                        <label for="username">Username</label><span class="required">*</span>
                         <input type="text" class="form-control" name="username" id="username"  required autofocus>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">First Name</label><span class="required">*</span>
+                        <label for="password">Password</label><span class="required">*</span>
+                        <input type="password" class="form-control" name="password" id="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="first_name">First Name</label><span class="required">*</span>
                         <input type="text" class="form-control" name="first_name" id="first_name" required>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Last Name</label><span class="required">*</span>
+                        <label for="last_name">Last Name</label><span class="required">*</span>
                         <input type="text" class="form-control" name="last_name" id="last_name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label><span class="required">*</span>
-                        <input type="password" class="form-control" name="password" id="password" required>
                     </div>
 
                     <button type="submit" class="btn btn-default">Submit</button>
                     <br />
+
                 </form>
             </div>
 
