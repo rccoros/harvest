@@ -5,6 +5,17 @@
             <a href="<?php echo base_url(); ?>?ap=dashboard">
 				<img src="<?php echo base_url(); ?>img/banner-puti.png" alt="Rapid HTML"/>
 			</a>
+            <div class="btn-group pull-right">
+                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> admin</span>
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="<?php echo base_url(); ?>?ap=usersv&id=<?php echo $this->session->userdata('user_id');?>">Profile</a></li>
+                    <li class="divider"></li>
+                    <li><a href="<?php echo base_url(); ?>cLogin/signout">Logout</a></li>
+                </ul>
+            </div>
         </div>
     </div>
     
