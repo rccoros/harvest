@@ -156,6 +156,7 @@ select {
     font-weight: bold;
     margin-top: 0;
     margin-bottom: 0;
+	color: #555555;
 }
 
 .box-header h3 {

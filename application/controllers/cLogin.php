@@ -17,8 +17,14 @@ class cLogin extends CI_Controller {
                 case 'dashboard':
                     $this -> session -> set_userdata('active_page','dashboard');
                     break;
+				case 'statistics':
+                    $this -> session -> set_userdata('active_page','statistics');
+                    break;
 				case 'calendar':
                     $this -> session -> set_userdata('active_page','calendar');
+                    break;
+				case 'about':
+                    $this -> session -> set_userdata('active_page','about');
                     break;
 				case 'signout':
                     $this -> session -> set_userdata('active_page','signout');
@@ -62,8 +68,14 @@ class cLogin extends CI_Controller {
                 case 'dashboard':
                     $this->dashboard();
                     break;
+				case 'statistics':
+                    $this->statistics();
+                    break;
 				case 'calendar':
                     $this->calendar();
+                    break;
+				case 'about':
+                    $this->about();
                     break;
 				case 'signout':
                     $this->signout();
@@ -195,12 +207,30 @@ class cLogin extends CI_Controller {
         $this -> load -> view('repeating/footer', $data);
     }
 	
+	public function statistics(){
+        $data['ActivePage'] = "statistics";
+
+        $this -> load -> view('repeating/header', $data);
+        $this -> load -> view('repeating/top-bar', $data);
+        $this -> load -> view('chart.html');
+        $this -> load -> view('repeating/footer', $data);
+    }
+	
 	public function calendar(){
         $data['ActivePage'] = "calendar";
 
         $this -> load -> view('repeating/header', $data);
         $this -> load -> view('repeating/top-bar', $data);
         $this -> load -> view('calendar.html');
+        $this -> load -> view('repeating/footer', $data);
+    }
+
+	public function about(){
+        $data['ActivePage'] = "calendar";
+
+        $this -> load -> view('repeating/header', $data);
+        $this -> load -> view('repeating/top-bar', $data);
+        $this -> load -> view('content/about');
         $this -> load -> view('repeating/footer', $data);
     }
 
