@@ -52,11 +52,13 @@ html .fc,
 .fc-header-title {
 	display: inline-block;
 	vertical-align: top;
+	color: #555555;
 	}
 	
 .fc-header-title h2 {
 	margin-top: 0;
 	white-space: nowrap;
+	color: #555555;
 	}
 	
 .fc .fc-header-space {
@@ -271,8 +273,8 @@ html .fc,
 	}
 	 
 .fc-event {
-	border: 1px solid #3a87ad; /* default BORDER color */
-	background-color: #3a87ad; /* default BACKGROUND color */
+	border: 1px solid #fee236; /* default BORDER color */
+	background-color: #fee236; /* default BACKGROUND color */
 	color: #fff;               /* default TEXT color */
 	font-size: .85em;
 	cursor: default;
@@ -300,6 +302,7 @@ a.fc-event,
 .fc-event-time,
 .fc-event-title {
 	padding: 0 1px;
+	color: #555555;
 	}
 	
 .fc .ui-resizable-handle {

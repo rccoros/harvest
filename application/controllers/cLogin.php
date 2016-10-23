@@ -191,7 +191,6 @@ class cLogin extends CI_Controller {
 
         $this -> load -> view('repeating/header', $data);
         $this -> load -> view('repeating/top-bar', $data);
-        //$this -> load -> view('repeating/left-menu', $data);
         $this -> load -> view('content/vDashboard');
         $this -> load -> view('repeating/footer', $data);
     }
@@ -201,7 +200,6 @@ class cLogin extends CI_Controller {
 
         $this -> load -> view('repeating/header', $data);
         $this -> load -> view('repeating/top-bar', $data);
-        $this -> load -> view('repeating/left-menu', $data);
         $this -> load -> view('calendar.html');
         $this -> load -> view('repeating/footer', $data);
     }
