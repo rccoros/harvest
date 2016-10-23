@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 22, 2016 at 02:34 PM
+-- Generation Time: Oct 23, 2016 at 07:13 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -50,15 +50,27 @@ INSERT INTO `ci_sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `exam`
+-- Table structure for table `exams`
 --
 
-CREATE TABLE `exam` (
+CREATE TABLE `exams` (
   `id` int(11) NOT NULL,
   `subject_id` int(11) NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `name` varchar(50) NOT NULL,
+  `date` date NOT NULL,
   `last_modified` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `exams`
+--
+
+INSERT INTO `exams` (`id`, `subject_id`, `name`, `date`, `last_modified`) VALUES
+(1, 1, 'Exam1', '2016-10-23', '2016-10-23 03:57:46'),
+(2, 1, 'Exam2', '2016-10-23', '2016-10-23 03:57:46'),
+(3, 2, 'Exam1', '2016-10-23', '2016-10-23 03:57:46'),
+(4, 2, 'Exam2', '2016-10-23', '2016-10-24 03:57:46'),
+(5, 3, 'Exam1', '2016-10-23', '2016-10-24 03:57:46');
 
 -- --------------------------------------------------------
 
@@ -72,6 +84,18 @@ CREATE TABLE `grades` (
   `exam_id` int(11) NOT NULL,
   `grade` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `grades`
+--
+
+INSERT INTO `grades` (`id`, `user_id`, `exam_id`, `grade`) VALUES
+(1, 4, 1, 100),
+(2, 4, 2, 80),
+(3, 5, 1, 90),
+(4, 5, 2, 85),
+(5, 6, 1, 95),
+(6, 6, 2, 97);
 
 -- --------------------------------------------------------
 
@@ -97,6 +121,15 @@ CREATE TABLE `subject` (
   `name` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `subject`
+--
+
+INSERT INTO `subject` (`id`, `name`) VALUES
+(1, 'Bathroom Chenelen'),
+(2, 'Baking'),
+(3, 'Marblicious');
+
 -- --------------------------------------------------------
 
 --
@@ -104,14 +137,14 @@ CREATE TABLE `subject` (
 --
 
 CREATE TABLE `users` (
-  `id` int(11) DEFAULT NULL,
+  `id` int(11) NOT NULL,
   `username` varchar(10) NOT NULL,
   `password` varchar(100) NOT NULL,
   `type` varchar(30) NOT NULL,
   `reset` int(11) NOT NULL,
   `first_name` varchar(30) NOT NULL,
   `last_name` varchar(30) NOT NULL,
-  `last_login` int(11) NOT NULL
+  `last_login` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -119,16 +152,20 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `type`, `reset`, `first_name`, `last_name`, `last_login`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'teacher', 0, 'Administrator', 'User', 1477058457);
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Administrator', 0, 'Administrator', 'User', NULL),
+(2, 'rccoros', 'b5f506b9b8b562e0ea4bebefddf52506', 'Teacher', 0, 'rccoros', 'rccoros', NULL),
+(4, 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'Student', 0, 'user', 'user', NULL),
+(5, 'user1', 'ee11cbb19052e40b07aac0ca060c23ee', 'Student', 0, 'Romnick', 'Coros', NULL),
+(6, 'user2', 'ee11cbb19052e40b07aac0ca060c23ee', 'Student', 0, 'user2', 'user2', NULL);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `exam`
+-- Indexes for table `exams`
 --
-ALTER TABLE `exam`
+ALTER TABLE `exams`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -150,19 +187,25 @@ ALTER TABLE `subject`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `exam`
+-- AUTO_INCREMENT for table `exams`
 --
-ALTER TABLE `exam`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `exams`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `grades`
 --
 ALTER TABLE `grades`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `lesson_plan`
 --
@@ -172,7 +215,12 @@ ALTER TABLE `lesson_plan`
 -- AUTO_INCREMENT for table `subject`
 --
 ALTER TABLE `subject`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
