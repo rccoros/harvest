@@ -9,16 +9,6 @@
 
         <div id="content" class="col-lg-10 col-sm-10">
             <!-- content starts -->
-                <div>
-        <ul class="breadcrumb">
-            <li>
-                <a href="<?php echo base_url(); ?>?ap=dashboard">Home</a>
-            </li>
-            <li>
-                <a href="<?php echo base_url(); ?>?ap=classrecord">Class Record</a>
-            </li>
-        </ul>
-    </div>
 
     <div class="row">
     <div class="box col-md-12">
@@ -76,7 +66,6 @@
     </div><!--/#content.col-md-0-->
 </div><!--/fluid-row-->
 
-    <hr>
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
          aria-hidden="true">
 
