@@ -9,7 +9,7 @@
                 <li if($GET['page']="dashboard"){style="class=\active\";"}><a href="?ap=dashboard">Home</a></li>
                 <li if($GET['page']="calendar"){style="class=\active\";"}><a href="?ap=calendar">Lesson Plan</a></li>
                 <li if($GET['page']="home"){style="class=\active\";"}><a href="?page=home">Statistics</a></li>
-                <li if($GET['page']="home"){style="class=\active\";"}><a href="?page=home">Class Record</a></li>
+                <li if($GET['page']="home"){style="class=\active\";"}><a href="?ap=classrecord">Class Record</a></li>
                 <li if($GET['page']="signout")><a href="<?php echo base_url(); ?>?ap=signout">Logout</a></li>
             </ul>
         </div>
